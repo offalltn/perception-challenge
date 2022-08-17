@@ -52,12 +52,12 @@ class AppScreen(FloatLayout):
 class MenuScreen(AppScreen,App):
     sound = SoundLoader.load('res/back.wav')
     sound.play()
-    ads = KivMob("ca-app-pub-6117636140856499~4746090954")
-    ads.add_test_device("4CDD16593360DCE6C8EB508F5D02FCF5")
-    ads.new_banner("ca-app-pub-6117636140856499/2510981294",top_pos=False)
+    ads = KivMob("ca-app-pub-******************")
+    ads.add_test_device("4CDD16**********************")
+    ads.new_banner("ca-app-pub-********************",top_pos=False)
     ads.request_banner()
     ads.show_banner()
-    ads.new_interstitial("ca-app-pub-6117636140856499/7380164596")
+    ads.new_interstitial("ca-app-pub-**********************")
     ads.request_interstitial()
 
     def __init__(self, app): #init the object, receiving the MainApp instance
