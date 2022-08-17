@@ -1,0 +1,178 @@
+
+#:import App kivy.app.App
+
+
+<MenuScreen>:
+    Image:
+        id: background
+        source: "res/background.png"
+        allow_stretch: True #image full the button
+        keep_ratio: False #image full the button
+
+    Image:
+        id: title
+        source: "res/title.png"
+        pos_hint: {'x': .11, 'y': .45}
+        size_hint: 0.77, 0.77
+        allow_stretch: False #image in fullscreen
+        keep_ratio: True #image in fullscreen
+
+    Button:
+        id: new_game
+        background_down: "res/play.png"
+        background_normal: "res/play.png"
+        on_press: root.new_game()
+        size_hint: 0.37, 0.15
+        pos_hint: {'x': 0.33, 'y': .47}
+        allow_stretch: False #image in fullscreen
+        keep_ratio: True #image in fullscreen
+
+    Button:
+        id: share
+        background_down: "res/share.png"
+        background_normal: "res/share.png"
+        on_press: root.share()
+        size_hint: 0.37, 0.15
+        pos_hint: {'x': 0.33, 'y': 0.31}
+        allow_stretch: False #image in fullscreen
+        keep_ratio: True #image in fullscreen
+
+    Button:
+        id: exit
+        background_down: "res/exit.png"
+        background_normal: "res/exit.png"
+        on_press:app.stop()
+        size_hint: 0.37, 0.15
+        pos_hint: {'x': 0.33, 'y': 0.15}
+        allow_stretch: False #image in fullscreen
+        keep_ratio: True #image in fullscreen
+
+    Button:
+        background_down: "res/sound_track.png"
+        background_normal: "res/sound_track.png"
+        size_hint: 0.15,0.13
+        pos_hint: {'x': 0.80, 'y': .1}
+        on_press: root.sound_track()
+
+
+<GameScreen>:
+    Image:
+        source: "res/background.png"
+        allow_stretch: True #image full the button
+        keep_ratio: False #image full the button
+
+    Label:
+        id: label_level
+        font_size: '25sp'
+        pos_hint: {'x': 0.0, 'y':0.45}
+        color:0,0,255,0.7
+
+    Image:
+        id:full_lives
+        source: 'res/full.png'
+        size_hint: 0.25,0.25
+
+    Image:
+        id:two_lives
+        source: 'res/2lives.png'
+        size_hint: 0.25,0.25
+
+    Image:
+        id:one_live
+        source: 'res/onelive.png'
+        size_hint: 0.25,0.25
+
+    Image:
+        id:no_lives
+        source: 'res/nolives.png'
+        size_hint: 0.25,0.25
+
+    Image:
+        id:image_win
+        source: 'res/win.png'
+        size_hint: 1,1
+
+    Image:
+        id:fivelevels
+        source: 'res/fivelevels.png'
+        size_hint: 1,1
+
+    Image:
+        id:image_gameover
+        source: 'res/gameover.png'
+        size_hint: 1.0, 1.0
+
+    Image:
+        id:image_lose
+        source: 'res/lose.png'
+        size_hint: 1.0, 1.0
+
+    Label:
+        id: label_last_block
+        text: ''
+        font_size: '20sp'
+        pos_hint: {'x': 0.0, 'y':0.35}
+        color:0,0,255,0.7
+    Label:
+        id: label_best
+        font_size: '20sp'
+        pos_hint: {'x': 0.0, 'y': 0.40}
+        color:0,0,255,0.7
+
+    Button:
+        id: back_menu
+        pos_hint: {'x': .75, 'y': .88}
+        background_down: "res/menu.png"
+        background_normal: "res/menu.png"
+        size_hint: 0.2, 0.1
+        on_release: app.show_interstitial()
+        on_press: root.go_menu()
+        allow_stretch: False #image in fullscreen
+        keep_ratio: True #image in fullscreen
+
+    Button:
+        id: nextlevel
+        pos_hint: {'x': .1, 'y': .88}
+        background_down: "res/nextlevel.png"
+        background_normal: "res/nextlevel.png"
+        size_hint: 0.2, 0.1
+        on_press: root.nextlevel()
+        allow_stretch: False #image in fullscreen
+        keep_ratio: True #image in fullscreen
+
+    Button:
+        id: startover
+        pos_hint: {'x': .1, 'y': .88}
+        background_down: "res/startover.png"
+        background_normal: "res/startover.png"
+        size_hint: 0.2, 0.1
+        on_press: root.startover()
+        allow_stretch: False #image in fullscreen
+        keep_ratio: True #image in fullscreen
+
+    Button:
+        id: nextlevelads
+        pos_hint: {'x': .1, 'y': .88}
+        background_down: "res/nextlevel.png"
+        background_normal: "res/nextlevel.png"
+        size_hint: 0.2, 0.1
+        on_release: app.show_interstitial()
+        on_press: root.nextlevel()
+        allow_stretch: False #image in fullscreen
+        keep_ratio: True #image in fullscreen
+
+    Button:
+        id: restart
+        background_down: "res/restart.png"
+        background_normal: "res/restart.png"
+        size_hint: 0.2, 0.1
+        on_press: root.restart()
+        allow_stretch: False #image in fullscreen
+        keep_ratio: True #image in fullscreen
+
+    GridLayout:
+        id: game_grid
+        cols: 2
+        rows: 2
+        size_hint: .9, root.width*1.1/root.height
+        pos_hint: {'x': 0.05, 'y': (0.5 - root.width*0.5/root.height) / 2}
