@@ -7,7 +7,7 @@ title = Perception Challenge
 package.name = perceptionchallenge
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = omcj.apps
+package.domain = ******
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -203,7 +203,7 @@ android.gradle_dependencies = 'com.google.firebase:firebase-ads:10.2.0'
 #android.wakelock = False
 
 # (list) Android application meta-data to set (key=value format)
-android.meta_data = com.google.android.gms.ads.APPLICATION_ID={ca-app-pub-6117636140856499~4746090954}
+android.meta_data = com.google.android.gms.ads.APPLICATION_ID={ca-app-pub-**********************}
 
 # (list) Android library project to add (will be added in the
 # project.properties automatically.)
